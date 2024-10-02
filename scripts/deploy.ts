@@ -11,12 +11,9 @@ export async function main() {
 
     console.log(`Waiting for AnyflowHelloWorld to be deployed... tx: ${deploymentTransaction.hash}`);
 
-    const publicClient = await hre.viem.getPublicClient();
-    // const { contractAddress } = await publicClient.waitForTransactionReceipt({
-    //     hash: deploymentTransaction.hash,
-    // });
 
-    // console.log('AnyflowHelloWorld deployed to:', contractAddress);
+    // Let's force a script failure after transactions have been successfully sent
+    throw new Error("Forced failure");
 }
 
 main()
